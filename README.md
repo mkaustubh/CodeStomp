@@ -7,5 +7,5 @@
 ### Home:
 ![video](https://github.com/mkaustubh/CodeStomp/blob/gh-pages/static/readme/home.gif)
 
-### Staff Management
+### Staff Management:
 ![video](https://github.com/mkaustubh/CodeStomp/blob/gh-pages/static/readme/management.gif.gif)
