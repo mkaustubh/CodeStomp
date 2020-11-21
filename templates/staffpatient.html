@@ -24,16 +24,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Gallery</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/dashboard">Dashboard</a>
+            <a class="nav-link" href="#">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact Us</a>
+            <a class="nav-link" href="contact.html">Contact Us</a>
           </li>
         </ul>
       </div>
@@ -42,9 +42,9 @@
 <div class="wrapper">
     <div class="sidebar">
         <ul class="navbar-nav ml-auto">
-            <li><a href="/dashboard"><i class="fas fa-chart-line"></i>Patient Statistics</a></li>
-            <li  class="active"><a href="/employeemanagement"><i class="fas fa-user"></i><span>Staff Management</span></a></li>
-            <li><a href="/patientmanagement"><i class="fas fa-procedures"></i>Patient Management</a></li>
+            <li><a href="/empdashboard"><i class="fas fa-chart-line"></i>Patient Statistics</a></li>
+            <li class="active"><a href="/staffpatient"><i class="fas fa-procedures"></i><span>Patient Management</span></a></li>
+
         </ul>
     </div>
 </div>
@@ -56,10 +56,14 @@
               <div class="table-title">
                   <div class="row">
                       <div class="col-sm-12">
-        <h2>Manage <b>Employeess</b></h2>
+        <h2>Manage <b>Patients</b></h2>
        </div>
        <div class="col-sm-12">
-        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" ><i class="fas fa-plus"></i> <span> Add New Employee </span></a>
+        <a href="#addPatientModal" class="btn btn-success" data-toggle="modal" ><i class="fas fa-plus"></i> <span> Add New Patient </span></a>
+        <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
        </div>
           </div>
               </div>
@@ -67,74 +71,85 @@
                   <thead>
                       <tr>
                           <th>Name</th>
-                          <th>Email</th>
                           <th>Address</th>
                           <th>Phone</th>
+                          <th>Status</th>
+                          <th>Symptoms</th>
                           <th>Actions</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
-                          <td>Employee 1</td>
-                          <td>soengsouy@mail.com</td>
+                          <td>Patient 1</td>
+
                           <td>89 Chiaroscuro Rd, Portland, Phnom Penh</td>
                           <td>0966686371</td>
+                          <td>Critical</td>
+                          <td>Fever</td>
                           <td>
-                              <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
-                              <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
+                              <a href="#editPatientModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
+                              <a href="#deletePatientModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
                           </td>
                       </tr>
                       <tr>
-                          <td>Employee 2</td>
-                          <td>soengsouy@mail.com</td>
-        <td>Obere Str. 57, Berlin, Battombang</td>
+                          <td>Patient 2</td>
+
+                          <td>Obere Str. 57, Berlin, Battombang</td>
                           <td>0966686372</td>
+                          <td>Healthy</td>
+                          <td>Cough</td>
                           <td>
-                              <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
-                              <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
+                              <a href="#editPatientModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
+                              <a href="#deletePatientModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
                           </td>
                       </tr>
        <tr>
 
-                          <td>Employee 3</td>
-                          <td>camobida@mail.com</td>
-        <td>25, Joly, Paris, Takev</td>
+                          <td>Patient 3</td>
+
+                          <td>25, Joly, Paris, Takev</td>
                           <td>0966686373</td>
+                          <td>Health</td>
+                          <td>Cough</td>
                           <td>
-                              <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
-                              <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
+                              <a href="#editPatientModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
+                              <a href="#deletePatientModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
                           </td>
                       </tr>
                       <tr>
 
-                          <td>Employee 4</td>
-                          <td>khmer09@mail.com</td>
+                          <td>Patient 4</td>
+
                           <td>PP San Sok, 67, Madrid, Pursat</td>
                           <td>0966686374</td>
+                          <td>Dead</td>
+                          <td>Breathlessness</td>
                           <td>
-                              <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
-                              <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
+                              <a href="#editPatientModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
+                              <a href="#deletePatientModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
                           </td>
                       </tr>
                         <tr>
 
-                          <td>Employee 5</td>
-                          <td>soengsouy@mail.com</td>
+                          <td>Patient 5</td>
+
                           <td>Via Monte Bianco 34, Turin, Pursat</td>
                           <td>0966686375</td>
+                          <td>Critical</td>
+                          <td>Asymptomatic</td>
                           <td>
-                              <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
-                              <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
+                              <a href="#editPatientModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
+                              <a href="#deletePatientModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
                           </td>
                       </tr>
                   </tbody>
               </table>
-							<div id="addEmployeeModal" class="modal bg-dark">
+							<div id="addPatientModal" class="modal bg-dark">
 							  <div class="modal-dialog">
 							   <div class="modal-content">
 							    <form>
 							     <div class="modal-header">
-							      <h4 class="modal-title">Add Employee</h4>
+							      <h4 class="modal-title">Add Patient</h4>
 							      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							     </div>
 							     <div class="modal-body">
@@ -164,12 +179,12 @@
 							  </div>
 							 </div>
 							 <!-- Edit Modal HTML -->
-							 <div id="editEmployeeModal" class="modal bg-dark" >
+							 <div id="editPatientModal" class="modal bg-dark" >
 							  <div class="modal-dialog">
 							   <div class="modal-content">
 							    <form>
 							     <div class="modal-header">
-							      <h4 class="modal-title">Edit Employee</h4>
+							      <h4 class="modal-title">Edit Patient</h4>
 							      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							     </div>
 							     <div class="modal-body">
@@ -195,16 +210,16 @@
 							      <input type="submit" class="btn btn-info" value="Save">
 							     </div>
 							    </form>
-							   </div>
+                </div>
 							  </div>
 							 </div>
 							 <!-- Delete Modal HTML -->
-							 <div id="deleteEmployeeModal" class="modal bg-dark">
+							 <div id="deletePatientModal" class="modal bg-dark">
 							  <div class="modal-dialog">
 							   <div class="modal-content">
 							    <form>
 							     <div class="modal-header">
-							      <h4 class="modal-title">Delete Employee</h4>
+							      <h4 class="modal-title">Delete Patient</h4>
 							      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							     </div>
 							     <div class="modal-body">
@@ -221,9 +236,6 @@
 							 </div>
 							 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 							 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-							 <script type="text/javascript">
-								modalshow(){
-									$('#deleteEmployeeModal').modal('show');
-								}
+
 </body>
 </html>
