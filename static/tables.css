@@ -115,7 +115,7 @@ body{
 }
 .table-wrapper {
        background: #fff;
-       padding: 20px 25px;
+       padding: 10px 15px;
        margin: 30px 0;
        border-radius:1px;
        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.247);
@@ -206,6 +206,9 @@ table.table .avatar {
  border-radius: 1px;
  vertical-align: middle;
  margin-right: 10px;
+}
+.container-fluid {
+  margin-left: 15% !important;
 }
 @keyframes gradient {
 	0% {
