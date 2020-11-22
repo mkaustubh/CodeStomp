@@ -12,3 +12,7 @@ Though the COVID-19 pandemic is not discriminatory in itself, socio-economic and
 ### Staff Management:
 (Easy management options with pop up forms which are easy to understand and use)
 ![video](https://github.com/mkaustubh/CodeStomp/blob/gh-pages/static/readme/management.gif.gif)
+
+### Dynamic Data visualization
+![graph](https://github.com/mkaustubh/CodeStomp/blob/gh-pages/static/images/graph.jpeg)
+Graphs and Pie Charts showing Patient and Symtoms stats.
