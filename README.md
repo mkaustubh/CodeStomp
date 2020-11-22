@@ -15,4 +15,4 @@ Though the COVID-19 pandemic is not discriminatory in itself, socio-economic and
 
 ### Dynamic Data visualization
 ![graph](https://github.com/mkaustubh/CodeStomp/blob/gh-pages/static/images/graph.jpeg)
-Graphs and Pie Charts showing Patient and Symtoms stats.
+Graphs and Pie Charts showing Patient and Symptoms stats.
