@@ -27,9 +27,8 @@
           <li class="nav-item">
             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
           </li>
-          
           <li class="nav-item active">
-            <a class="nav-link" href="/dashboard">Dashboard</a>
+            <a class="nav-link" href="/userdash">Dashboard</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/contact">Contact Us</a>
@@ -41,9 +40,9 @@
 <div class="wrapper">
     <div class="sidebar">
         <ul class="navbar-nav ml-auto">
-            <li class="active"><a href="/dashboard"><i class="fas fa-chart-line"></i></i><span>Patient Statistics</span></a></li>
+            <li class="active"><a href="/userdash"><i class="fas fa-chart-line"></i></i><span>Patient Statistics</span></a><!-- </li>
             <li><a href="/kauyushi"><i class="fas fa-user"></i>Staff Management</a></li>
-            <li><a href="/patientmanagement"><i class="fas fa-procedures"></i>Patient Management</a></li>
+            <li><a href="/patientmanagement"><i class="fas fa-procedures"></i>Patient Management</a></li> -->
         </ul>
     </div>
 </div>
@@ -92,10 +91,6 @@
 <div class="row">
   <div class="col-6">
     {{ status_chart() }}
-  </div>
-
-  <div class="col-6">
-    {{ symptom_chart() }}
   </div>
 
 <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>

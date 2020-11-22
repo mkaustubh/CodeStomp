@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-	<meta charset="UTF-8">
-	<title></title>
+  <meta charset="UTF-8">
+  <title></title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.1/css/all.min.css"
   integrity="sha512-9my9Mb2+0YO+I4PUCSwUYO7sEK21Y0STBAiFEYoWtd2VzLEZZ4QARDrZ30hdM1GlioHJ8o8cWQiy8IAb1hy/Hg==" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -24,16 +24,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Gallery</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Dashboard</a>
+            <a class="nav-link" href="/dashboard">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact Us</a>
+            <a class="nav-link" href="/contact">Contact Us</a>
           </li>
         </ul>
       </div>
@@ -43,15 +43,16 @@
     <div class="sidebar">
         <ul class="navbar-nav ml-auto">
             <li><a href="/empdashboard"><i class="fas fa-chart-line"></i>Patient Statistics</a></li>
+            <!-- <li><a href="/kauyushi"><i class="fas fa-user"></i>Staff Management</a></li> -->
             <li class="active"><a href="/staffpatient"><i class="fas fa-procedures"></i><span>Patient Management</span></a></li>
 
         </ul>
     </div>
 </div>
-<div class="container">
+<div class="container-fluid">
 
 <div class="row">
-    <div class="container">
+    <div class="container-fluid">
           <div class="table-wrapper">
               <div class="table-title">
                   <div class="row">
@@ -71,171 +72,170 @@
                   <thead>
                       <tr>
                           <th>Name</th>
-                          <th>Address</th>
-                          <th>Phone</th>
-                          <th>Status</th>
+                          <th>Contact</th>
+                          <th>Gender</th>
                           <th>Symptoms</th>
-                          <th>Actions</th>
+                          <th>Treatment</th>
+                          <th>Last Covid Test Date</th>
+                          <th>Bed No.</th>
+                          <th>Ventilator</th>
+                          <th>Prescription</th>
+                          <th>Note</th>
+
                       </tr>
                   </thead>
                   <tbody>
+                    {% for patient in emp1 %}
                       <tr>
-                          <td>Patient 1</td>
-
-                          <td>89 Chiaroscuro Rd, Portland, Phnom Penh</td>
-                          <td>0966686371</td>
-                          <td>Critical</td>
-                          <td>Fever</td>
+                          <td>{{patient.name}}</td>
+                          <td>{{patient.contact}}</td>
+                          <!-- <td>{{patient.address}}</td> -->
+                          <!-- <td>{{patient.dateofbirth}}</td> -->
+                          <td>{{patient.gender}}</td>
+                          <td>{{patient.symptoms}}</td>
+                          <td>{{patient.treatment}}</td>
+                          <td>{{patient.lastcovidtestdate}}</td>
+                          <td>{{patient.bedno}}</td>
+                          <td>{{patient.ventilator}}</td>
+                          <td>{{patient.prescription}}</td>
+                          <td>{{patient.note}}</td>
                           <td>
                               <a href="#editPatientModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
                               <a href="#deletePatientModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
                           </td>
                       </tr>
-                      <tr>
-                          <td>Patient 2</td>
-
-                          <td>Obere Str. 57, Berlin, Battombang</td>
-                          <td>0966686372</td>
-                          <td>Healthy</td>
-                          <td>Cough</td>
-                          <td>
-                              <a href="#editPatientModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
-                              <a href="#deletePatientModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
-                          </td>
-                      </tr>
-       <tr>
-
-                          <td>Patient 3</td>
-
-                          <td>25, Joly, Paris, Takev</td>
-                          <td>0966686373</td>
-                          <td>Health</td>
-                          <td>Cough</td>
-                          <td>
-                              <a href="#editPatientModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
-                              <a href="#deletePatientModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
-                          </td>
-                      </tr>
-                      <tr>
-
-                          <td>Patient 4</td>
-
-                          <td>PP San Sok, 67, Madrid, Pursat</td>
-                          <td>0966686374</td>
-                          <td>Dead</td>
-                          <td>Breathlessness</td>
-                          <td>
-                              <a href="#editPatientModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
-                              <a href="#deletePatientModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
-                          </td>
-                      </tr>
-                        <tr>
-
-                          <td>Patient 5</td>
-
-                          <td>Via Monte Bianco 34, Turin, Pursat</td>
-                          <td>0966686375</td>
-                          <td>Critical</td>
-                          <td>Asymptomatic</td>
-                          <td>
-                              <a href="#editPatientModal" class="edit" data-toggle="modal"><i class="fas fa-user-edit"></i></a>
-                              <a href="#deletePatientModal" class="delete" data-toggle="modal"><i class="fas fa-user-slash"></i></a>
-                          </td>
-                      </tr>
+                      
+                      {% endfor %}
                   </tbody>
               </table>
-							<div id="addPatientModal" class="modal bg-dark">
-							  <div class="modal-dialog">
-							   <div class="modal-content">
-							    <form>
-							     <div class="modal-header">
-							      <h4 class="modal-title">Add Patient</h4>
-							      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							     </div>
-							     <div class="modal-body">
-							      <div class="form-group">
-							       <label>Name</label>
-							       <input type="text" class="form-control" required>
-							      </div>
-							      <div class="form-group">
-							       <label>Email</label>
-							       <input type="email" class="form-control" required>
-							      </div>
-							      <div class="form-group">
-							       <label>Address</label>
-							       <textarea class="form-control" required></textarea>
-							      </div>
-							      <div class="form-group">
-							       <label>Phone</label>
-							       <input type="text" class="form-control" required>
-							      </div>
-							     </div>
-							     <div class="modal-footer">
-							      <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-							      <input type="submit" class="btn btn-success" value="Add">
-							     </div>
-							    </form>
-							   </div>
-							  </div>
-							 </div>
-							 <!-- Edit Modal HTML -->
-							 <div id="editPatientModal" class="modal bg-dark" >
-							  <div class="modal-dialog">
-							   <div class="modal-content">
-							    <form>
-							     <div class="modal-header">
-							      <h4 class="modal-title">Edit Patient</h4>
-							      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							     </div>
-							     <div class="modal-body">
-							      <div class="form-group">
-							       <label>Name</label>
-							       <input type="text" class="form-control" required>
-							      </div>
-							      <div class="form-group">
-							       <label>Email</label>
-							       <input type="email" class="form-control" required>
-							      </div>
-							      <div class="form-group">
-							       <label>Address</label>
-							       <textarea class="form-control" required></textarea>
-							      </div>
-							      <div class="form-group">
-							       <label>Phone</label>
-							       <input type="text" class="form-control" required>
-							      </div>
-							     </div>
-							     <div class="modal-footer">
-							      <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-							      <input type="submit" class="btn btn-info" value="Save">
-							     </div>
-							    </form>
+              <div id="addPatientModal" class="modal bg-dark">
+                <div class="modal-dialog">
+                 <div class="modal-content">
+                  <form action="/patientmanagement" method="POST">
+                   <div class="modal-header">
+                    <h4 class="modal-title">Add Patient</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                   </div>
+                   <div class="modal-body">
+                    <div class="form-group">
+                     <label>Name</label>
+                     <input type="text" class="form-control" id="name" name="name"  required>
+                    </div>
+                    <div class="form-group">
+                     <label>Contact</label>
+                     <input type="number" class="form-control" id="contact" name="contact" required>
+                    </div>
+                    <div class="form-group">
+                     <label>Address</label>
+                     <input type="text" class="form-control" id="address" name="address" required>
+                    </div> 
+                    <div class="form-group">
+                     <label>DOB</label>
+                     <input type="date" class="form-control" id="dateofbirth" name="dateofbirth" required>
+                    </div> 
+                    <div class="form-group">
+                     <label>Gender</label>
+                     <input type="text" class="form-control" id="gender" name="gender" required>
+                    </div>
+                    <div class="form-group">
+                     <label>Symptoms</label>
+                     <input type="text" class="form-control" id="symptoms" name="symptoms" required>
+                    </div>
+                    <div class="form-group">
+                     <label>Treatment</label>
+                     <input type="text" class="form-control" id="treatment" name="treatment" required>
+                    </div>
+                    <div class="form-group">
+                     <label>Last Covid Test Date</label>
+                     <input type="date" class="form-control" id="lastcovidtestdate" name="lastcovidtestdate" required>
+                    </div>
+                    <div class="form-group">
+                     <label>Bed No.</label>
+                     <input type="number" class="form-control" id="bedno" name="bedno" required>
+                    </div>
+                    <div class="form-group">
+                     <label>Ventilator</label>
+                     <input type="number" class="form-control" id="ventilator" name="ventilator" required>
+                    </div>
+                    <div class="form-group">
+                     <label>Prescription</label>
+                     <input type="text" class="form-control" id="prescription" name="prescription" required>
+                    </div>
+                    <div class="form-group">
+                     <label>Note</label>
+                     <input type="text" class="form-control" id="note" name="note" required>
+                    </div>
+                   </div>
+                   <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-success" value="Add">
+                   </div>
+                  </form>
+                 </div>
                 </div>
-							  </div>
-							 </div>
-							 <!-- Delete Modal HTML -->
-							 <div id="deletePatientModal" class="modal bg-dark">
-							  <div class="modal-dialog">
-							   <div class="modal-content">
-							    <form>
-							     <div class="modal-header">
-							      <h4 class="modal-title">Delete Patient</h4>
-							      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							     </div>
-							     <div class="modal-body">
-							      <p>Are you sure you want to delete these Records?</p>
-							      <p class="text-warning"><small>This action cannot be undone.</small></p>
-							     </div>
-							     <div class="modal-footer">
-							      <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-							      <input type="submit" class="btn btn-danger" value="Delete">
-							     </div>
-							    </form>
-							   </div>
-							  </div>
-							 </div>
-							 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-							 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+               </div>
+
+
+
+
+               <!-- Edit Modal HTML -->
+              <!--  <div id="editPatientModal" class="modal bg-dark" >
+                <div class="modal-dialog">
+                 <div class="modal-content">
+                  <form>
+                   <div class="modal-header">
+                    <h4 class="modal-title">Edit Patient</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                   </div>
+                   <div class="modal-body">
+                    <div class="form-group">
+                     <label>Name</label>
+                     <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                     <label>Email</label>
+                     <input type="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                     <label>Address</label>
+                     <textarea class="form-control" required></textarea>
+                    </div>
+                    <div class="form-group">
+                     <label>Phone</label>
+                     <input type="text" class="form-control" required>
+                    </div>
+                   </div>
+                   <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-info" value="Save">
+                   </div>
+                  </form>
+                </div>
+                </div>
+               </div>
+               <Delete Modal HTML -->
+              <!--  <div id="deletePatientModal" class="modal bg-dark">
+                <div class="modal-dialog">
+                 <div class="modal-content">
+                  <form>
+                   <div class="modal-header">
+                    <h4 class="modal-title">Delete Patient</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                   </div>
+                   <div class="modal-body">
+                    <p>Are you sure you want to delete these Records?</p>
+                    <p class="text-warning"><small>This action cannot be undone.</small></p>
+                   </div>
+                   <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                   </div>
+                  </form>
+                 </div>
+                </div>
+               </div> --> 
+               <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+               <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>
 </html>
